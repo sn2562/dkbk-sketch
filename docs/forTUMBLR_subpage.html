@@ -32,7 +32,7 @@
 		<link href="https://sn2562.github.io/dkbk-sketch/css/basic.css" rel="stylesheet" type="text/css" />
 
 		<!--DKBK-->
-		<script src="https://sn2562.github.io/dkbk-sketch/js/dkbk_min.js"></script>
+		<script src="https://sn2562.github.io/dkbk-sketch/js/dkbk_allfunc.js"></script>
 
 	</head>
 	<body>
@@ -40,11 +40,21 @@
 			/* ***** single sketch viewer for tumblr top page ***** */
 			//HTMLが読み込まれたら実行
 			window.addEventListener('load', init, false);
+			window.onload = function() { 
+				if (navigator.userAgent.indexOf('iPhone') > 0 || navigator.userAgent.indexOf('iPad') > 0 || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {
+					//スマートフォン時に実行したいjs
+					//					setTimeout(function(){
+					//						window.scrollTo(0,1);
+					//					}, 1);
+				}
+			}
 		</script>
 		<style>
+			/*
 			div#canvas {
-				display: inline-block;
+			display: inline-block;
 			}
+			*/
 		</style>
 
 		<!-- show canvas -->
