@@ -185,7 +185,7 @@ function ready(){
 	container.appendChild(renderer.domElement);
 
 	//controles
-	controls = new THREE.TrackballControls( container.children[0].children[0]);
+	controls = new THREE.TrackballControls( camera,container );
 
 	controls.rotateSpeed = 1.0;
 	controls.zoomSpeed = 1.3;
