@@ -28,7 +28,7 @@ var onCanvas = false;
 var raycaster, mouse;
 
 //constract
-var zoom = 1;
+var zoom = 0.6;
 var width=640*zoom;
 var height=480*zoom;
 var z0 = (height/2)/Math.tan(Math.PI/8)*2;//z0は元の座標系における原点に合うように設定.*2でスケッチ空間の中央に原点を移動
@@ -209,13 +209,6 @@ function ready(){
 	// trackballに変化があった時だけ描画を呼ぶ
 	controls.addEventListener( 'change', render );
 
-	//スマホ向けに画面を最大化する
-	if (navigator.userAgent.indexOf('iPhone') > 0 || navigator.userAgent.indexOf('iPad') > 0 || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {
-		//スマートフォン時に実行したいjs
-		window.scrollTo(0,0);
-		resize();
-		onPC = false;
-	}
 	//ボタンの設定初期化
 	$("#changeMode").prop('checked', sketchMode);
 
@@ -338,25 +331,6 @@ function init(){
 			box.className = "radio";
 			//ラベルの生成
 			var label = document.createElement('label');
-
-			//radioボタンの生成
-			//						var button = document.createElement('input');
-			//						button.type = "radio";
-			//						button.name = "optionsRadios";
-			//						button.id = "optionsRadios"+i;
-			//						button.value = i;
-			//						button.for = box.name;
-			//						button.className = "datalist_contents";
-			//						if(i==0){
-			//							button.checked = "true"
-			//						}
-			//最後の子要素として追加
-			//						label.appendChild(button);
-			//						var num = i+1;
-			//						label.appendChild(document.createTextNode("Sketch Data "+num));
-			//						box.appendChild(label);
-			//						element.appendChild(box);
-
 		}
 		ready();//描画
 	});

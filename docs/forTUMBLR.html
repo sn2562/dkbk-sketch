@@ -57,6 +57,7 @@ corygibbons.com
 		<style type="text/css">
 			.post-background { background: {color:Post Hover}; }
 			{block:IndexPage} {block:IfNotShowFullPhotoset}.post .photoset { display: none; } .post .photoset:first-child { display: block; }{/block:IfNotShowFullPhotoset}{/block:IndexPage}
+
 			{CustomCSS}
 		</style>
 
@@ -71,22 +72,6 @@ corygibbons.com
 				<div class="title fade">
 					<h1><a href="/">{Title}</a></h1><br>
 					<h1><a href="/">{Description}</a></h1><br>
-					<br>
-
-
-					<!-- show canvas -->
-					<div id="canvas" draggable="true" ondrag="myFunction(event)"></div>
-
-					<!-- show controles -->
-					<div id="controles">
-<!--
-						<div class="checkbox" id="changeVisibility">
-							<label><input type="checkbox" value="0" onclick="changeVisible(this)">Depth</label>
-							<label><input type="checkbox" value="1" onclick="changeVisible(this)" checked>Sketch</label>
-						</div>
--->
-						<button type="submit" class="btn btn-success" onclick="resetView()">RESET</button>
-					</div>
 
 					{block:HasPages}
 					/
@@ -94,25 +79,42 @@ corygibbons.com
 					<span class="page"><a href="{URL}">{Label}</a></span>
 					{/block:Pages}
 					{/block:HasPages}
-				</div>
 
 
-				{block:TagPage}
-				<div class="tagged fade">
-					Viewing all entries marked "{Tag}"
-				</div>
-				{/block:TagPage}
+					{block:TagPage}
+					<div class="tagged fade">
+						Viewing all entries marked "{Tag}"
+					</div>
+					{/block:TagPage}
 
-			</header>
+					</header>
 
 
 
-			<section id="posts">
+				<section id="posts">
 
-				{block:Posts}
+					{block:Posts}
+					{block:Post1}
+					{block:IndexPage}
 
-				{block:Post1}
-				{block:IndexPage}
+
+					<!-- show canvas -->
+					<div id="canvas" draggable="true" ondrag="myFunction(event)"></div>
+
+					<!-- show controles -->
+					<div id="controles">
+						<!--
+<div class="checkbox" id="changeVisibility">
+<label><input type="checkbox" value="0" onclick="changeVisible(this)">Depth</label>
+<label><input type="checkbox" value="1" onclick="changeVisible(this)" checked>Sketch</label>
+</div>
+-->
+						<button type="submit" class="btn btn-success" onclick="resetView()">RESET</button>
+					</div>
+
+					</div>
+
+
 				<section class="post fade double">
 					{/block:IndexPage}
 
