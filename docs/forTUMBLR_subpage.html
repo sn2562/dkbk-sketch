@@ -1,0 +1,63 @@
+<!--<!DOCTYPE html>-->
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>DKBK Sketch</title>
+
+
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+		<!--BOOTSTRAP-->
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+		<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+
+		<!--THREE.JS-->
+		<script src="https://sn2562.github.io/dkbk-sketch/js/threejs/three.min.js"></script>
+		<script src="https://sn2562.github.io/dkbk-sketch/js/threejs/Octree.js" type="text/javascript"></script>
+		<script src="https://sn2562.github.io/dkbk-sketch/js/threejs/renderers/Projector.js"></script>	
+		<script src="https://sn2562.github.io/dkbk-sketch/js/threejs/controls/TrackballControls.js"></script>
+		<script src="https://sn2562.github.io/dkbk-sketch/js/threejs/renderers/CanvasRenderer.js"></script>
+		<script src="https://sn2562.github.io/dkbk-sketch/js/threejs/libs/stats.min.js"></script>
+
+		<!--DOWNLOAD-->
+		<script src="https://sn2562.github.io/dkbk-sketch/js/FileSaver.min.js"></script>
+		<script src="https://sn2562.github.io/dkbk-sketch/js/canvas-toBlob.js"></script>
+		<script src="https://sn2562.github.io/dkbk-sketch/js/FileDownloader.js"></script>
+
+
+		<!--MY CSS-->
+		<link href="https://sn2562.github.io/dkbk-sketch/css/basic.css" rel="stylesheet" type="text/css" />
+
+		<!--DKBK-->
+		<script src="https://sn2562.github.io/dkbk-sketch/js/dkbk_min.js"></script>
+
+	</head>
+	<body>
+		<script>
+			/* ***** single sketch viewer for tumblr top page ***** */
+			//HTMLが読み込まれたら実行
+			window.addEventListener('load', init, false);
+		</script>
+		<style>
+			div#canvas {
+				display: inline-block;
+			}
+		</style>
+
+		<!-- show canvas -->
+		<div id="canvas" draggable="true" ondrag="myFunction(event)"></div>
+
+		<!-- show controles -->
+		<div id="controles">
+			<div class="checkbox" id="changeVisibility">
+				<label><input type="checkbox" value="0" onclick="changeVisible(this)">Depth</label>
+				<label><input type="checkbox" value="1" onclick="changeVisible(this)" checked>Sketch</label>
+			</div>
+			<button type="submit" class="btn btn-success" onclick="resetView()">RESET VIEWPOINT</button>
+		</div>
+
+	</body>
+</html>
