@@ -30,7 +30,7 @@
 
 		<!--MY CSS-->
 		<link href="https://sn2562.github.io/dkbk-sketch/css/basic.css" rel="stylesheet" type="text/css" />
-		
+
 		<!--DKBK-->
 		<script src="https://sn2562.github.io/dkbk-sketch/js/dkbk.js"></script>
 
@@ -41,6 +41,11 @@
 			//HTMLが読み込まれたら実行
 			window.addEventListener('load', init, false);
 		</script>
+		<style>
+			div#canvas {
+				display: inline-block;
+			}
+		</style>
 
 		<!-- show canvas -->
 		<div id="canvas" draggable="true" ondrag="myFunction(event)"></div>
