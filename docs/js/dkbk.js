@@ -110,7 +110,7 @@ function ready(){
 
 
 	//Axis
-	drawAxis();
+	//drawAxis();
 
 
 	//Objects
