@@ -29,10 +29,12 @@
 
 
 		<!--MY CSS-->
-		<link href="https://sn2562.github.io/dkbk-sketch/css/basic.css" rel="stylesheet" type="text/css" />
+<!--		<link href="https://sn2562.github.io/dkbk-sketch/css/basic.css" rel="stylesheet" type="text/css" />-->
+		<link href="css/basic.css" rel="stylesheet" type="text/css" />
 
 		<!--DKBK-->
-		<script src="https://sn2562.github.io/dkbk-sketch/js/dkbk_allfunc.js"></script>
+		<!--		<script src="https://sn2562.github.io/dkbk-sketch/js/dkbk_allfunc.js"></script>-->
+		<script src="js/dkbk_allfunc.js"></script>
 
 	</head>
 	<body>
@@ -50,24 +52,68 @@
 			}
 		</script>
 		<style>
-			/*
-			div#canvas {
-			display: inline-block;
+			body{
 			}
-			*/
+			
+			#canvas {
+				display: inline-block;
+			}
+
 		</style>
+
+		<!-- show loading -->
+		<div id="loader-bg">
+			<div id="loading-canvas" class="loader">Loading...</div>
+		</div>
 
 		<!-- show canvas -->
 		<div id="canvas" draggable="true" ondrag="myFunction(event)"></div>
 
 		<!-- show controles -->
 		<div id="controles">
-			<div class="checkbox" id="changeVisibility">
-				<label><input type="checkbox" value="0" onclick="changeVisible(this)">Depth</label>
-				<label><input type="checkbox" value="1" onclick="changeVisible(this)" checked>Sketch</label>
-			</div>
-			<button type="submit" class="btn btn-success" onclick="resetView()">RESET VIEWPOINT</button>
-		</div>
+			<input id="changeMode" type="checkbox" data-toggle="toggle" checked data-on="Sketch Mode" data-off="View Mode">
 
+			<div class="checkbox" id="changeVisibility">
+				<label><input type="checkbox" value="0" onclick="changeVisible(this)">Depth Data</label>
+				<label><input type="checkbox" value="1" onclick="changeVisible(this)" checked>Sketch Data</label>
+				<label><input type="checkbox" value="2" onclick="changeVisible(this)" checked>Your Sketch Data</label>
+			</div>
+
+			<br>
+
+			<div class="radio">
+				<label class="radio-inline">
+					<input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" onclick="changeControl(0)" checked = "true"> PAN/TILT/ROLL
+				</label>
+				<label class="radio-inline">
+					<input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" onclick="changeControl(1)"> ZOOM IN/OUT
+				</label>
+				<label class="radio-inline">
+					<input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" onclick="changeControl(2)"> TRANSLATE
+				</label>
+				<br>
+				<br>
+				<button type="submit" class="btn btn-success" onclick="resetView()">RESET VIEWPOINT</button>
+			</div>
+
+			<!-- show sketch list -->
+
+			<div id="datalist">
+			</div>
+
+
+			<br>
+			<br>
+			<button type="submit" class="btn btn-danger" onclick="deleteSketch()">DELETE SKETCH</button>
+			<br>
+			<br>
+			<br>
+			<p>Download / Upload Your Sketch Data</p>
+			<button class="btn btn-default download" value="0" type="submit" onclick="downloadFile(this)">DOWNLOAD(.txt)</button>
+			<button class="btn btn-default download" value="1" type="submit" onclick="downloadFile(this)">DOWNLOAD(.png)</button>
+			<p>
+				<input type="file" id="files" name="files[]" multiple />
+			</p>
+		</div>
 	</body>
 </html>

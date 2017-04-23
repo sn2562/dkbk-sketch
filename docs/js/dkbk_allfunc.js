@@ -4,20 +4,12 @@ var startTime = new Date().getTime();//開始時間
 
 //load Files
 var dataPath = [
-	//				'Box_front',
-	//				'Box_side',
-	//				'takeu',
+	'Box_front',
+	'Box_side',
 	'guitar',
-	//				'Hungry',
-	//				'anim01',
-	//				'anim02',
-	//				'anim03',
-	//				'SpeakerDoll',
-	//				'kt',
-	//				'TDNaru',
-	//				'Box_side_m',
-	//				'takeu_m',
-	//				'Hungry_m',
+	'Hungry',
+	'SpeakerDoll',
+	'Box_side_m',
 	'CafeEN'
 ];//読み込みファイル一覧
 for(var i=0;i<dataPath.length;i++){
@@ -104,13 +96,27 @@ var fps = 10;//
 var oldFrame = 0;
 var isFrameChange = false;
 
+
+function drawLoading(){
+	//	var myCanvas = document.getElementsByTagName('canvas')[0];
+	//	myCanvas.height = height;
+	//	myCanvas.width = width;
+	var loadingArea = document.getElementById("loader-bg");
+	loadingArea.style.height = height;
+	loadingArea.style.width = width;
+
+}
+
 function ready(){
+
+	//delete loading dom
+	var loader = document.getElementById("loader-bg");
+	loader.parentNode.removeChild(loader);
 
 	// DOM
 	container = document.createElement('div');
 	//				document.body.appendChild(container);
 	document.getElementById("canvas").appendChild(container);
-
 
 	// Scene
 	scene = new THREE.Scene();
@@ -233,14 +239,6 @@ function ready(){
 	render();//描画
 	animate();
 
-	///////////////////////////////////////
-	//				canvas.addEventListener("touchstart",onDown(),false);
-	//				canvas.addEventListener("touchmove",onMove,false);
-	//				canvas.addEventListener("touchend",onUp,false);
-	//				canvas.addEventListener("mousedown",onMouseDown,false);
-	//				canvas.addEventListener("mousemove",onMouseMove,false);
-	//				canvas.addEventListener("mouseup",onMouseUp,false);
-	//				canvas.addEventListener("mouseup",onMouseUp,false);
 
 	document.getElementById('files').addEventListener('change', uploadFile, false);
 
@@ -334,7 +332,8 @@ function ready(){
 	});
 };
 function init(){
-	//読み込みの実行
+
+	drawLoading();
 
 	var dataList = [];
 

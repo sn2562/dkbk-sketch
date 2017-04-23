@@ -93,7 +93,24 @@ var isFrameChange = false;
 //HTMLが読み込まれたら実行
 //window.addEventListener('load', init, false);
 
+
+function drawLoading(){
+	//	var myCanvas = document.getElementsByTagName('canvas')[0];
+	//	myCanvas.height = height;
+	//	myCanvas.width = width;
+	var loadingArea = document.getElementById("loader-bg");
+	loadingArea.style.height = height;
+	loadingArea.style.width = width;
+
+}
+
+
 function ready(){
+	
+	//delete loading dom
+	var loader = document.getElementById("loader-bg");
+	loader.parentNode.removeChild(loader);
+
 
 	// DOM
 	container = document.createElement('div');
@@ -305,6 +322,9 @@ function ready(){
 	});
 };
 function init(){
+	
+	drawLoading();
+	
 	//読み込みの実行
 
 	var dataList = [];
