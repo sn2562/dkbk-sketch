@@ -13,7 +13,7 @@ var dataPath = [
 	'CafeEN'
 ];//読み込みファイル一覧
 for(var i=0;i<dataPath.length;i++){
-	dataPath[i] = "data/"+dataPath[i]+".dsddata.txt";
+	dataPath[i] = "https://sn2562.github.io/dkbk-sketch/data/"+dataPath[i]+".dsddata.txt";
 }
 
 var onPC = true;
@@ -98,9 +98,6 @@ var isFrameChange = false;
 
 
 function drawLoading(){
-	//	var myCanvas = document.getElementsByTagName('canvas')[0];
-	//	myCanvas.height = height;
-	//	myCanvas.width = width;
 	var loadingArea = document.getElementById("loader-bg");
 	loadingArea.style.height = height;
 	loadingArea.style.width = width;
