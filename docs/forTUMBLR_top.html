@@ -64,7 +64,7 @@ corygibbons.com
 		<script src="https://sn2562.github.io/dkbk-sketch/js/FileDownloader.js"></script>
 
 		<!--DKBK-->
-		<script src="https://sn2562.github.io/dkbk-sketch/js/dkbk.js"></script>
+		<script src="https://sn2562.github.io/dkbk-sketch/js/dkbk_min.js"></script>
 
 
 
@@ -82,19 +82,20 @@ corygibbons.com
 			{block:IndexPage} {block:IfNotShowFullPhotoset}.post .photoset { display: none; } .post .photoset:first-child { display: block; }{/block:IfNotShowFullPhotoset}{/block:IndexPage}
 
 			header{
-				margin:10px;
+			}
+			#loader-bg{
+				display :block;
 			}
 
-			div#demo {
+			#demo {
 				display :inline;
 				right :0;
 				left:0;
 				top:0;
-				height :400px;
 				position :absolute;
 				text-align: center;
 			}
-			div#canvas {
+			#canvas {
 				display: inline-block;
 			}
 			canvas{
@@ -103,7 +104,7 @@ corygibbons.com
 				border-width: 3px;
 				border-color: 888;
 			}
-			div#controles{
+			#controles{
 				margin-bottom :20px;
 			}
 
@@ -122,6 +123,25 @@ corygibbons.com
 				<div class="title fade">
 					<h1><a href="/">{Title}</a></h1><br>
 					<h1><a href="/">{Description}</a></h1><br>
+
+					<!-- top only -->
+					{block:PermalinkPage}<!--{/block:PermalinkPage}
+{block:TagPage}<!--{/block:TagPage}
+
+<div id="loader-bg">
+<div id="loading-canvas" class="loader">Loading...</div>
+</div>
+
+<div id="demo">
+<div id="canvas" draggable="true" ondrag="myFunction(event)"></div>
+<div id="controles">
+<button type="submit" class="btn btn-success" onclick="resetView()">RESET VIEWPOINT</button>
+</div>
+</div>
+
+{block:TagPage}-->{/block:TagPage}
+					{block:PermalinkPage}-->{/block:PermalinkPage}
+					<!-- top only -->					
 
 					{block:HasPages}
 					/
@@ -143,33 +163,15 @@ corygibbons.com
 
 				<section id="posts">
 
-					<div id="demo">
-						<!-- show canvas -->
-						<div id="canvas" draggable="true" ondrag="myFunction(event)"></div>
-
-						<!-- show controles -->
-						<div id="controles">
-							<button type="submit" class="btn btn-success" onclick="resetView()">RESET</button>
-						</div><!--end of controles-->
-
-					</div><!--end of demo-->
-					<!-- <div class="ui_dialog_lock" style="display: none;"></div> -->		
-
-
 					{block:Posts}
 					{block:Post1}
 					{block:IndexPage}
-
-
 					<section class="post fade double">
 						{/block:IndexPage}
-
 						{block:PermalinkPage}
 						<section class="post fade double">
 							{/block:PermalinkPage}
 							{/block:Post1}
-
-
 
 							{block:Post2}</section><section class="post fade single">{/block:Post2}
 						{block:Post3}</section><section class="post fade single">{/block:Post3}
