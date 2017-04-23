@@ -466,7 +466,6 @@ function perseSketchData(data){
 
 function changeDrawData(idx){
 	//idx番目のデータに描画内容を書き換える
-	console.log("・-・");
 
 	nowDataNumber = idx;
 
