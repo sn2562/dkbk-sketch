@@ -4,12 +4,12 @@ var startTime = new Date().getTime();//開始時間
 
 //load Files
 var dataPath = [
-//	'Box_front',
+	'Box_front',
 	'Box_side',
 	'guitar',
 	'Hungry',
 	'SpeakerDoll',
-//	'Box_side_m',
+	'Box_side_m',
 	'CafeEN'
 ];//読み込みファイル一覧
 for(var i=0;i<dataPath.length;i++){
