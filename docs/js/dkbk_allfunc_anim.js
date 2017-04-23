@@ -233,7 +233,7 @@ function ready(){
 
 	render();//描画
 	if(isAnimation_SUB){
-		isAnimation = ture;
+		isAnimation = true;
 		isAnimation_SUB = false;
 	}
 	animate();
