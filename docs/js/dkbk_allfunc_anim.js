@@ -86,6 +86,7 @@ var usersSketchData =  {
 };
 //Animation
 var isAnimation = true;//animation mode
+var isAnimation_SUB = false;
 var animOrder = [0,1,2,1];//読み込みデータに応じて表示順序を指示
 var animIndex = 0;//
 //calc framerate
@@ -231,6 +232,10 @@ function ready(){
 	$("#changeMode").prop('checked', sketchMode);
 
 	render();//描画
+	if(isAnimation_SUB){
+		isAnimation = ture;
+		isAnimation_SUB = false;
+	}
 	animate();
 
 
@@ -329,6 +334,11 @@ function init(){
 
 	drawLoading();
 
+	if(isAnimation){
+		isAnimation = false;//読込が終わるまで一旦false
+		isAnimation_SUB = true;//上記の代わりにフラグを立てておく
+	}
+	
 	var dataList = [];
 
 	for (var i = 0; i <= dataPath.length; i++) {
