@@ -4,13 +4,10 @@ var startTime = new Date().getTime();//開始時間
 
 //load Files
 var dataPath = [
-	'Box_front',
-	'Box_side',
-	'guitar',
-	'Hungry',
-	'SpeakerDoll',
-	'Box_side_m',
-	'CafeEN'
+	'anim01',
+	'anim02',
+	'anim03',
+	'anim02'
 ];//読み込みファイル一覧
 for(var i=0;i<dataPath.length;i++){
 	dataPath[i] = "https://sn2562.github.io/dkbk-sketch/data/"+dataPath[i]+".dsddata.txt";
@@ -88,7 +85,7 @@ var usersSketchData =  {
 	"endpoints":0
 };
 //Animation
-var isAnimation = false;//animation mode
+var isAnimation = true;//animation mode
 var animOrder = [0,1,2,1];//読み込みデータに応じて表示順序を指示
 var animIndex = 0;//
 //calc framerate
