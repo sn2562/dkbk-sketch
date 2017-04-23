@@ -32,7 +32,7 @@
 		<link href="https://sn2562.github.io/dkbk-sketch/css/basic.css" rel="stylesheet" type="text/css" />
 
 		<!--DKBK-->
-		<script src="https://sn2562.github.io/dkbk-sketch/js/dkbk.js"></script>
+		<script src="js/dkbk_min.js"></script>
 
 	</head>
 	<body>
@@ -42,21 +42,21 @@
 			window.addEventListener('load', init, false);
 		</script>
 		<style>
-			div#canvas {
+			#canvas {
+				margin: 40px;
 				display: inline-block;
 			}
 		</style>
 
-		<!-- show canvas -->
-		<div id="canvas" draggable="true" ondrag="myFunction(event)"></div>
+		<div id="loader-bg">
+			<div id="loading-canvas" class="loader">Loading...</div>
+		</div>
 
-		<!-- show controles -->
-		<div id="controles">
-			<div class="checkbox" id="changeVisibility">
-				<label><input type="checkbox" value="0" onclick="changeVisible(this)">Depth</label>
-				<label><input type="checkbox" value="1" onclick="changeVisible(this)" checked>Sketch</label>
+		<div id="demo">
+			<div id="canvas" draggable="true" ondrag="myFunction(event)"></div>
+			<div id="controles">
+				<button type="submit" class="btn btn-success" onclick="resetView()">RESET VIEWPOINT</button>
 			</div>
-			<button type="submit" class="btn btn-success" onclick="resetView()">RESET VIEWPOINT</button>
 		</div>
 
 	</body>
