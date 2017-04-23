@@ -72,7 +72,7 @@ var loadedSketchData = {
 };
 
 //users sketch data
-var sketchMode = true;
+var sketchMode = false;
 var usersSketchData =  {
 	"maxpoints": 100000,
 	"lines": 0,
